@@ -33,6 +33,8 @@ def main(params):
 
     df.head(0).to_sql(con = engine, name=table_name, if_exists='replace')
 
+    df.to_sql(con = engine, name=table_name, if_exists='append')
+
     while True:
         df = next(df_iter)
 
